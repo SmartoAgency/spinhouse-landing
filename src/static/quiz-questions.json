@@ -1,0 +1,138 @@
+[
+    {
+        "dialog": "Hi! Let’s evaluate your project together.",
+        "question": "What type of property do you want to promote with Spinhouse?",
+        "name": "propertyType",
+        "answers": [
+            "Residential Complex",
+            "Commercial Real Estate",
+            "Apartments/Penthouses",
+            "Villas/Cottages"
+        ]
+    },
+
+    {
+        "dialog": "Great start! Let’s keep going.",
+        "question": "What is the size of your project?",
+        "name": "projectSize",
+        "answers": [
+            "Less than 50 units",
+            "50-100 units",
+            "100-200 units",
+            "More than 200 units"
+        ]
+    },
+
+    {
+        "dialog": "Awesome, let’s move on!",
+        "question": "In which region is your project located?",
+        "name": "projectRegion",
+        "answers": [
+            "Europe",
+            "North America",
+            "Middle East",
+            "Asia",
+            "Other"
+        ]
+    },
+
+    {
+        "dialog": "Thanks for your answer! Just a few more steps to go.",
+        "question": "What is the brand level of your project?",
+        "name": "projectBrand",
+        "answers": [
+            "Economy",
+            "Comfort",
+            "Business",
+            "Premium",
+            "Luxury"
+        ]
+    },
+
+
+    {
+        "dialog": "Great job, let’s continue!",
+        "question": "How digitized is your project at the moment?",
+        "name": "projectDigitalization",
+        "answers": [
+            "Minimal digitalization (only a website)",
+            "Partial digitalization (website + basic online solutions)",
+            "Good digitalization level (website, 3D models, virtual tours)",
+            "High digitalization level (full implementation of digital technologies, including CRM)"
+        ]
+    },
+
+    {
+        "dialog": "You’re almost there, keep it up!",
+        "question": "Which key features of Spinhouse are most important to you?",
+        "name": "projectFeatures",
+        "answers": [
+            "Interactive 3D Models",
+            "Virtual Tours and Floor Plans",
+            "Online Booking and CRM Integration",
+            "All of the Above"
+        ]
+    },
+
+    {
+        "dialog": "Just a little more, and we’re done. You’re doing great!",
+        "question": "What additional SmartOrange services are you interested in?",
+        "name": "projectServices",
+        "answers": [
+            "Video Sphere (3D animation and video)",
+            "Full Website Development",
+            "Premium Visualization and Renderings",
+            "DevBase (CRM system for sales management)"
+        ]
+    },
+
+    {
+        "dialog": "You’re nailing it! Almost there.",
+        "question": "What is your desired project timeline?",
+        "name": "projectTimeline",
+        "answers": [
+            "Less than 1 month",
+            "1-2 months",
+            "2-3 months",
+            "More than 3 months"
+        ]
+    },
+    {
+        "dialog": "Awesome! You’ve completed it. Thanks!",
+        "question": "Please leave your contact information to receive a cost estimate and personalized recommendations!",
+        "name": "projectTimeline",
+        "submit": "Get Cost Estimate",
+        "hideNext": true,
+        "hideCounter": true,
+        "inputs": [
+            {
+                "type": "text",
+                "placeholder": "Name",
+                "name": "name"
+            },
+            {
+                "type": "text",
+                "placeholder": "Email",
+                "name": "email"
+            },
+            {
+                "type": "tel",
+                "placeholder": "Phone",
+                "name": "phone"
+            }
+        ]
+    },
+    {
+        "dialog": "Awesome! You’ve completed it. Thanks!",
+        "question": "Boom!",
+        "name": "projectTimeline",
+        "submit": false,
+        "hideNext": true,
+        "hideCounter": true,
+        "titles": [
+            "Your idea is our next big project. ",
+            "Stay tuned!"
+        ],
+        "svg": "<svg width=\"101\" height=\"85\" viewBox=\"0 0 101 85\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><g clip-path=\"url(#clip0_447_5906)\"><path d=\"M29.843 79.0513C35.1822 81.8907 41.2754 83.4996 47.7444 83.4996C68.8304 83.4996 85.9239 66.4061 85.9239 45.3201C85.9239 24.2342 68.8304 7.14062 47.7444 7.14062C26.6585 7.14062 9.56494 24.2342 9.56494 45.3201C9.56494 54.8054 13.0239 63.4827 18.7492 70.1597L15.076 82.208L14.5157 84.0456L16.3423 83.4504L29.843 79.0513Z\" stroke=\"#00D361\" stroke-width=\"2\"/><path d=\"M44.9239 35.3201C44.9239 31.4097 41.6549 28.1406 37.7444 28.1406C33.834 28.1406 30.5649 31.4097 30.5649 35.3201\" stroke=\"#00D361\" stroke-width=\"2\"/><path d=\"M71.5908 35.3201C71.5908 31.4097 68.4385 28.1406 64.6677 28.1406C60.8969 28.1406 57.7446 31.4097 57.7446 35.3201\" stroke=\"#00D361\" stroke-width=\"2\"/><path d=\"M59.2828 50.7053C59.2828 54.6157 56.0137 57.8848 52.1033 57.8848C48.1929 57.8848 44.9238 54.6157 44.9238 50.7053\" stroke=\"#00D361\" stroke-width=\"2\"/><path d=\"M8.43311 13.668L10.8111 16.0459L16.2147 10.6422\" stroke=\"#00D361\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M90.3457 25.8945L92.7237 28.2725L98.1273 22.8688\" stroke=\"#00D361\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><circle cx=\"81.5905\" cy=\"5.32051\" r=\"3.82051\" stroke=\"#00D361\" stroke-width=\"2\"/><circle cx=\"5.69307\" cy=\"75.0647\" r=\"3.82051\" stroke=\"#00D361\" stroke-width=\"2\"/><circle cx=\"91.3342\" cy=\"75.0647\" r=\"3.82051\" stroke=\"#00D361\" stroke-width=\"2\"/></g><defs><clipPath id=\"clip0_447_5906\"><rect width=\"101\" height=\"84\" fill=\"white\" transform=\"translate(0 0.5)\"/></clipPath></defs></svg>"
+    }
+]

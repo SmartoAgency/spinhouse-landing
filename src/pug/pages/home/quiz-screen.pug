@@ -1,0 +1,35 @@
+.quiz-screen
+  .quiz-screen__bg
+    picture
+      source(srcset="./assets/images/quiz-screen/bg@05x.png", media="(max-width: 600px)")
+      source(srcset="./assets/images/quiz-screen/bg@075x.png", media="(max-width: 1440px)")
+      source(srcset="./assets/images/quiz-screen/bg.png")
+      img(src="./assets/images/quiz-screen/bg.png", alt="Image")
+  .quiz-screen__content
+    .text-white.text-style-1920-h-3.quiz-screen__description quick cost project estamination with spinhouse
+    form.quiz-screen__quiz(data-quiz-form) 
+      .quiz-item-wrapper
+        .quiz-item(data-quiz-item)
+          .quiz-item__top
+            .quiz-item__avatar
+              img(src="./assets/images/quiz-screen/founder.png", alt="Avatar")
+            .quiz-item__top-info
+              .quiz-item__title Alex Sobko
+              .quiz-item__subtitle OWNER SMARTO AGENCY
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21.6664 6.66517C9.7004 6.66517 0 14.3456 0 23.8231C0 28.7665 2.64402 33.2198 6.86751 36.3516C6.70801 37.1078 6.09144 39.3771 4.17788 41.4254C3.42414 42.232 2.91969 42.3066 3.24413 43.0744C3.55265 43.8053 9.33468 43.0933 12.6176 39.414C15.3714 40.4173 18.4347 40.983 21.6658 40.983C33.6306 40.983 43.3333 33.3001 43.3333 23.8225C43.3338 14.3448 33.6318 6.66455 21.6658 6.66455L21.6664 6.66517Z" fill="#E1E4F5"/>
+              <path d="M55.8469 49.7066C53.9439 47.597 53.3326 45.2665 53.17 44.4874C57.3707 41.2656 59.9997 36.6864 59.9997 31.6021C59.9997 23.9591 54.0671 17.4534 45.7728 14.998C47.0071 17.5035 47.6898 20.2527 47.6898 23.137C47.6898 34.6582 36.7881 44.0442 23.333 44.1641C27.2225 47.3056 32.5615 49.2488 38.4577 49.2488C41.6698 49.2488 44.7165 48.6676 47.4543 47.6356C50.7185 51.4217 56.4657 52.1521 56.7756 51.4003C57.0973 50.6126 56.5959 50.537 55.8469 49.7066Z" fill="#E1E4F5"/>
+            </svg>
+          .quiz-item__bottom
+            .quiz-item__question 
+              .quiz-item__question-wrap
+              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 9.99805C7.5 9.99805 1.25 7.49805 0 -0.00195312C5 0.998047 8.75 0.414714 10 -0.00195312V9.99805Z" fill="#E1E4F5"/>
+              </svg>
+            .quiz-item__answer-block
+              .quiz-item__answer-block-wrapper
+              .quiz-item__progress-bar(data-quiz-item-progress-bar)
+                .quiz-item__progress-bar-digit
+                  span(data-quiz-item-progress-bar-number) 12.5
+                  span %
+                .quiz-item__progress-bar-fill(data-quiz-item-progress-bar-fill)

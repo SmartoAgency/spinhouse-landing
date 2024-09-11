@@ -1,0 +1,103 @@
+.home-for-who-block {
+    overflow: hidden;
+    padding-top: 19.44vh;
+    padding-bottom: 19.44vh;
+    padding-left: var(--page-side-fields);
+    padding-right: var(--page-side-fields);
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    @media screen and (max-width:1024px){
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+
+    @include to(600px){
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    .paralax-screen-wrapper-transform,
+    .paralax-screen-wrapper-scale,
+    .paralax-screen {
+        width: 100%;
+        height: 100%;
+
+    }
+    &__title {
+        width: 100%;
+        // margin-bottom: pxInVh(132);
+        position: relative;
+        z-index: 2;
+        &--text-indent {
+            padding-left: 20%;
+            @media screen and (max-width:1024px){
+                padding-left: 15%;
+            }
+        }
+        &--last {
+            margin-bottom: pxInVh(132);
+            @include to(1024px){
+                margin-bottom: 100px;
+            }
+            @media screen and (max-width:600px){
+                margin-bottom: 40px;
+            }
+
+        }
+    }
+    &__bg-figure {
+        position: absolute;
+        right: 15%;
+        top: 0;
+        z-index: 0;
+        @media screen and (max-width:600px){
+            width: 100%;
+            right: 20%;
+        }
+    }
+    &__bg {
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top right;
+        }
+    }
+    &__item  {
+        width: 33.3%;
+        padding: 28px;
+        @include to(1024px){
+            width: 85%;
+            margin-left: auto;
+            padding: 0;
+            position: relative;
+            z-index: 2;
+        }
+        &-button {
+            margin-top: 40px;
+            @media screen and (max-width:1024px){
+                margin-top: 20px;
+            }
+            button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    }
+    &__item~&__item {
+        border-left: none;
+        @media screen and (max-width:1024px){
+            margin-top: 60px;
+        }
+        @media screen and (max-width:600px){
+            margin-top: 40px;
+        }
+    }
+}

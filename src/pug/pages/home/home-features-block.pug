@@ -1,0 +1,89 @@
+-
+  const features = [
+    {
+      "title": "Integration with CRM",
+      "text": "Always up-to-date prices and statuses using an open API.",
+      "img": "./assets/images/home-features-block/integration_with_crm.svg"
+    },
+    {
+      "title": "For any website",
+      "text": "Using iFrame technology or under any button.",
+      "img": "./assets/images/home-features-block/for_any_website.svg"
+    },
+    {
+      "title": "surrounding Infrastructure",
+      "text": "Markers and tours for important infrastructure.",
+      "img": "./assets/images/home-features-block/surrounding_infrastructure.svg"
+    },
+    {
+      "title": "interactive аpartment tours",
+      "text": "Explore layouts with ease.",
+      "img": "./assets/images/home-features-block/interactive_apartment_tours.svg"
+    },
+    {
+      "title": "Online  Reservation",
+      "text": "Hot leads straight to your CRM.",
+      "img": "./assets/images/home-features-block/online_reservation.svg"
+    },
+    {
+      "title": "For any device",
+      "text": "Mobile phones, laptops, large touchscreens, and even TVs.",
+      "img": "./assets/images/home-features-block/for_any_device.svg"
+    },
+  ];
+
+
+  
+.home-features-block(id="Feature")
+  .home-features-block__bg_figure
+    picture
+      source(srcset="./assets/images/home-features-block/Figure@05x.png", media="(max-width: 600px)")
+      source(srcset="./assets/images/home-features-block/Figure@075x.png", media="(max-width: 1440px)")
+      source(srcset="./assets/images/home-features-block/Figure.png")
+      img(src="./assets/images/home-features-block/Figure.png", alt="Image")
+  .home-features-block__bg
+    .paralax-screen
+      .paralax-screen-wrapper-transform
+        .paralax-screen-wrapper-scale
+          img(loading="lazy" src="./assets/images/home-features-block-bg.jpg")
+  .home-features-block__title
+    div.text-style-1920-h-1.text-white Features
+  each val in features
+    .home-features-block__item
+      div.home-features-block__item-img
+        div.home-features-block__item-img-wrap
+          img(src=val.img loading="lazy")
+      .home-features-block__item__text
+        div.text-style-1920-h-3.text-white=val.title
+        div.text-style-1920-body.text-gray=val.text
+  .home-features-block__bottom
+    .home-features-block__bottom-item
+      .home-features-block__bottom-item-img
+        img(loading="lazy" src="./assets/images/home-features-block/bottom/Iphone 14 pro.png")
+        img(loading="lazy" src="./assets/images/home-features-block/tablet-blur.png")
+      .home-features-block__bottom-item-title.text-white.text-style-1920-h-3 Smartphones
+      .home-features-block__bottom-item-text.text-gray.text-style-1920-body IOS / Android
+    .home-features-block__bottom-item
+      .home-features-block__bottom-item-img
+        img(loading="lazy" src="./assets/images/home-features-block/bottom/iPad Air (2020).png")
+        img(loading="lazy" src="./assets/images/home-features-block/tablet-blur.png")
+      .home-features-block__bottom-item-title.text-white.text-style-1920-h-3 Tablets
+      .home-features-block__bottom-item-text.text-gray.text-style-1920-body IOS / Android / Windows
+    .home-features-block__bottom-item
+      .home-features-block__bottom-item-img
+        img(loading="lazy" src="./assets/images/home-features-block/bottom/Macbook Air (2022).png")
+        img(loading="lazy" src="./assets/images/home-features-block/pc-blur.png")
+      .home-features-block__bottom-item-title.text-white.text-style-1920-h-3 PC
+      .home-features-block__bottom-item-text.text-gray.text-style-1920-body Software installation / WEB Version
+    .home-features-block__bottom-item
+      .home-features-block__bottom-item-img
+        img(loading="lazy" src="./assets/images/home-features-block/bottom/Free Touch Screen Digital Display Mockup.png")
+        img(loading="lazy" src="./assets/images/home-features-block/kiosk-blur.png")
+      .home-features-block__bottom-item-title.text-white.text-style-1920-h-3 KIOSKS
+      .home-features-block__bottom-item-text.text-gray.text-style-1920-body Touch screens / tablets for sales rooms
+  .home-features-block__bottom-item-last
+    button.button-30(type='button' data-form-popup-call) 
+      span Explore the features
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18 19L18 8M18 8L7 8M18 8L8.1 17.9" stroke="#212125" stroke-width="3.5"/>
+      </svg>

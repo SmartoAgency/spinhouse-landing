@@ -1,0 +1,81 @@
+
+.contact-screen {
+    position: relative;
+    background-color: #09090A;
+    min-height: calc(var(--vh, 1vh) * 100);
+    padding: pxInVh(156) var(--page-side-fields) pxInVh(240) var(--page-side-fields);
+    overflow: hidden;
+
+    @include to(1024px){
+        padding: 150px var(--page-side-fields);
+        min-height: calc(var(--vh, 1vh) * 60);
+        margin-top: -1px;
+    }
+    @include to(600px){
+        padding-bottom: 100px;
+        padding-top: 50px;
+    }
+    &__bg {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 60%;
+        height: auto;
+        pointer-events: none;
+        @media screen and (max-width:600px){
+            width: 100%;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            object-position: left;
+        }
+    }
+    &__content {
+        position: relative;
+        z-index: 2;
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; 
+        grid-template-rows: 1fr 1fr 1fr; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+            "title title title title title title"
+            ". description . form form ."
+            ". . . form form ."; 
+
+        @include to(1024px){
+            grid-template-rows: repeat(3, auto);
+            grid-template-areas: 
+                "title title title title title title"
+                "description description description . . ."
+                ". form form form form form"; 
+            .contact-screen-form {
+                max-width: none;
+            }
+        }
+        @include to(600px){
+            grid-template-rows: repeat(3, auto);
+            grid-template-areas: 
+                "title title title title title title"
+                "description description description description description description"
+                "form form form form form form"; 
+            .contact-screen-form {
+                padding-top: 20px;
+            }
+        }
+    }
+    .contact-screen-form { grid-area: form; }
+    &__description { 
+        grid-area: description; 
+        @include to(1024px){
+            margin-bottom: 40px;
+        }
+    }
+    &__title { 
+        grid-area: title; 
+        @include to(1024px){
+            margin-bottom: 40px;
+        }
+    }
+}

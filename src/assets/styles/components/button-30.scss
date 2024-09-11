@@ -1,0 +1,85 @@
+.button-30 {
+    @include text-style-1920-buttons;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-black);
+    color: var(--color-black);
+    font-family: $default-font2;
+    padding: 30px 40px;
+    position: relative;
+    overflow: hidden;
+    transition: 0.45s cubic-bezier(0.3, 1, 0.8, 1);
+    @include to(1024px){
+        padding: 28px 30px;
+    }
+
+    @media screen and (max-width:600px){
+        @include text-style-872-buttons;
+        padding: 18px 12px 18px 16px;
+    }
+    [stroke],
+    [fill] {
+        transition: 0.45s cubic-bezier(0.3, 1, 0.8, 1);
+    }
+
+    &:after {
+        position: absolute;
+        top: 0;
+        left: -10%;
+        content: "";
+        background: #f0f1f8;
+        background-color: var(--color-white);
+        width: 120%;
+        height: 100%;
+        transform: skew(26deg);
+        transition: transform 0.45s cubic-bezier(0.3, 1, 0.8, 1);
+    }
+
+    @media (hover: hover) {
+        &:hover:after {
+            transform: translate3d(100%, 0, 0);
+        }
+        &:hover {
+            color: var(--color-white);
+            [stroke] {
+                stroke: var(--color-white);
+            }
+            [fill] {
+                fill: var(--color-white);
+            }
+        }
+    }
+    span,
+    svg {
+        z-index: 1;
+        position: relative;
+    }
+
+    svg:last-child {
+        margin-left: 8px;
+        @media screen and (max-width:600px){
+            margin-left: 4px;
+        }
+    }
+
+    svg:first-child {
+        margin-right: 8px;
+    }
+}
+
+.desktop {
+    .button-30 {
+        &--blue:hover {
+            background: var(--color-white) !important;
+            color: var(--button-color) !important;
+            ;
+        }
+    }
+}
+
+
+.mobile {
+    .button-30 {
+        padding: 18px 16px;
+    }
+}

@@ -1,0 +1,24 @@
+mixin form(attr)
+  .form-wrapper(data-form-wrapper)
+    form.contact-screen-form(data-popup-form data-lenis-prevent)
+      .form-popup-close(data-form-popup-close)
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M7.99991 6.58575L8.70701 7.29286L12.4999 11.0858L16.2928 7.29286L16.9999 6.58575L18.4141 7.99997L17.707 8.70707L13.9141 12.5L17.707 16.2929L18.4141 17L16.9999 18.4142L16.2928 17.7071L12.4999 13.9142L8.70701 17.7071L7.99991 18.4142L6.58569 17L7.2928 16.2929L11.0857 12.5L7.2928 8.70707L6.58569 7.99997L7.99991 6.58575Z" fill="#F7F9FB"/>
+        </svg>
+      .text-white.text-style-1920-h-3.contact-screen-form__title Let’s create something unique together
+      .contact-screen-form__group(data-status="field--inactive" data-field-input="data-field-input" data-field-name="data-field-name")
+        .contact-screen-form__group-message(data-input-message="data-input-message")
+        .contact-screen-form__group-title Name:
+        input.contact-screen-form__input(type="text" placeholder="Type your name" name="name")
+      .contact-screen-form__group(data-status="field--inactive" data-field-input="data-field-input" data-field-name="data-field-phone")
+        .contact-screen-form__group-message(data-input-message="data-input-message")
+        .contact-screen-form__group-title Phone:
+        input.contact-screen-form__input(type="tel" placeholder="Phone" name="phone")
+      .contact-screen-form__group
+        .contact-screen-form__group-title Email:
+        input.contact-screen-form__input(type="text" placeholder="Type your email" name="email")
+      button(type="submit" data-btn-submit="data-btn-submit").contact-screen-form__button
+        span(data-btn-submit-text) Get Cost Estimate
+        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.5 19L18.5 8M18.5 8L7.5 8M18.5 8L8.6 17.9" stroke="#F7F9FB" stroke-width="3.5"/>
+        </svg>

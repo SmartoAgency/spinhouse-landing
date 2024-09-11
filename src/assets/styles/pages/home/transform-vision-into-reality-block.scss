@@ -1,0 +1,85 @@
+.transform-vision-into-reality-block {
+    padding: pxInVh(150) var(--page-side-fields);
+    @media screen and (max-width:600px){
+        padding-top: 100px;
+        padding-bottom: 40px;
+    }
+    &__bg {
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        video,
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        &-overlay {
+            background: #000;
+            opacity: 0.5;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    &__content {
+        display: grid; 
+        grid-template-columns: 1fr 2fr 1fr; 
+        grid-template-rows: auto auto pxInVh(178) auto; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+        "title title title"
+        ". title2 title2"
+        ". . ."
+        ". description button"; 
+        @include to(1024px){
+            grid-template-rows: max-content max-content auto max-content max-content; 
+            grid-template-columns: 0.35fr 1.25fr 1fr; 
+            grid-template-areas: 
+            "title title ."
+            ". title2 ."
+            ". . ."
+            ". description description"
+            ". button button"
+            ; 
+        }
+        @include to(600px){
+            grid-template-rows: max-content max-content auto max-content max-content; 
+            grid-template-columns: 0.25fr 1fr 0.5fr; 
+            grid-template-areas: 
+            "title title ."
+            ". title2 title2"
+            ". . ."
+            ". description description"
+            ". button button"
+            ; 
+        }
+    }
+    &__title1 {
+        grid-area: title;
+    }
+    &__title2 {
+        grid-area: title2;
+    }
+    &__description {
+        grid-area: description;
+        @include from(1025px){
+            padding-right: 30%;
+        }
+        @include from-to(601px, 1024px){
+            padding-right: 35%;
+        }
+        
+    }
+    &__button {
+        grid-area: button;
+        @include to(1024px){
+            margin-top: 28px;
+        }
+    }
+}

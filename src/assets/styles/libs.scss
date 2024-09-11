@@ -1,0 +1,51 @@
+@import '../scripts/libs/swiper/swiper';
+@import '../../../node_modules/swiper/swiper';
+@import '../../../node_modules/swiper/modules/effect-fade/effect-fade';
+@import '../../../node_modules/accordion-js/dist/accordion.min';
+@import '../../../node_modules/intl-tel-input/build/css/intlTelInput.min';
+@import '../../../node_modules/driver.js/dist/driver';
+
+
+.driver-popover {
+  all: unset;
+  box-sizing: border-box;
+  color: initial;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+  min-width: auto;
+  max-width: none;
+  box-shadow: none;
+  z-index: 1000000000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+}
+
+.driver-overlay {
+}
+
+.driver-overlay path {
+  stroke: white;
+  stroke-width: 6px;
+  cursor: zoom-out;
+}
+
+.driver-fade .driver-popover {
+  animation: animate-fade-in 0.55s;
+}
+
+.driver-popover-arrow {
+  display: none !important;
+}
+
+.iti {
+    width: 100%;
+}
+.iti__flag {background-image: url("../images/libs/flags.png");}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti__flag {background-image: url("../images/libs/flags@2x.png");}
+}
+

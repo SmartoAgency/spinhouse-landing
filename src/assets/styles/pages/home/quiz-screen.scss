@@ -1,0 +1,64 @@
+.quiz-screen {
+    position: relative;
+    background-color: #09090A;
+    min-height: calc(var(--vh, 1vh) * 100);
+    padding: pxInVh(210) var(--page-side-fields) pxInVh(100) var(--page-side-fields);
+    overflow: hidden;
+    @include to(1024px){
+        padding: 150px var(--page-side-fields);
+        min-height: calc(var(--vh, 1vh) * 60);
+    }
+    @include to(600px){
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+    &__bg {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        @include to(1024px){
+            height: auto;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: right;
+        }
+    }
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 2;
+    }
+    &__description {
+        width: pxWidthInVw(360);
+        margin-right: 21px;
+        @include to(1024px){
+            width: 100%;
+            padding-right: 60%;
+        }
+        @include to(600px){
+            padding-right: 0;
+            padding-left: 20%;
+            margin-bottom: 40px;
+        }
+    }
+    &__quiz {
+        // background-color: var(--color-white);
+        min-height: 540px;
+        min-width: 540px;
+        @include to(1024px){
+            margin-left: auto;
+            // min-width: 605px;
+        }
+        @include to(600px){
+            min-width: 100%;
+            min-height: auto;
+        }
+    }
+}

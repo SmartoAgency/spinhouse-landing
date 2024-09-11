@@ -1,0 +1,13 @@
+.footer {
+  position: relative;
+  .delimiter {
+    margin-bottom: 40px;
+  }
+  .dev-logo {
+    position: absolute;
+    right: var(--page-side-fields);
+    bottom: 0;
+    width: 52px;
+    height: 57px;
+  }
+}

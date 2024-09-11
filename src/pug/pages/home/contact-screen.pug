@@ -1,0 +1,28 @@
+.contact-screen(id="Contact")
+  .contact-screen__bg
+    picture
+      source(srcset="./assets/images/contact-screen/Meteorite@05x.png", media="(max-width: 600px)")
+      source(srcset="./assets/images/contact-screen/Meteorite@075x.png", media="(max-width: 1440px)")
+      source(srcset="./assets/images/contact-screen/Meteorite.png")
+      img(src="./assets/images/contact-screen/Meteorite.png", alt="Image")
+  .contact-screen__content
+    .text-white.text-style-1920-h-1.contact-screen__title CONTACT
+    .text-white.text-style-1920-h-3.contact-screen__description No time for questions? Just leave your details here.
+    form.contact-screen-form(data-contact-screen-form)
+      .text-white.text-style-1920-h-3.contact-screen-form__title Let’s create something unique together
+      .contact-screen-form__group(data-status="field--inactive" data-field-input="data-field-input" data-field-name="data-field-name")
+        .contact-screen-form__group-message(data-input-message="data-input-message")
+        .contact-screen-form__group-title Name:
+        input.contact-screen-form__input(type="text" placeholder="Type your name" name="name")
+      .contact-screen-form__group(data-status="field--inactive" data-field-input="data-field-input" data-field-name="data-field-phone")
+        .contact-screen-form__group-message(data-input-message="data-input-message")
+        .contact-screen-form__group-title Phone:
+        input.contact-screen-form__input(type="tel" placeholder="Phone" name="phone")
+      .contact-screen-form__group
+        .contact-screen-form__group-title Email:
+        input.contact-screen-form__input(type="email" placeholder="Type your email" name="email")
+      button(type="submit" data-btn-submit="data-btn-submit").contact-screen-form__button
+        span(data-btn-submit-text) Get Cost Estimate
+        <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18.5 19L18.5 8M18.5 8L7.5 8M18.5 8L8.6 17.9" stroke="#F7F9FB" stroke-width="3.5"/>
+        </svg>

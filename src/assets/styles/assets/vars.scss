@@ -1,0 +1,341 @@
+$default-font: "Inter Display",
+sans-serif;
+$default-font2: "Unbounded",
+sans-serif;
+
+
+$color-white: rgba(247,249,251,1);
+$color-gray: #a6a9ba;
+$color-black: rgba(33,33,37,1);
+$color-green: rgba(0,211,97,1);
+
+.text-white {
+	color: $color-white;
+}
+.text-black {
+	color: $color-black;
+}
+.text-gray {
+	color: $color-gray;
+}
+.text-green {
+	color: $color-green;
+}
+.text-stroke-white {
+	-webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--color-white);
+    color: transparent;
+	@media screen and (max-width:600px){
+		-webkit-text-stroke-width: 1px;
+	}
+}
+
+
+$mc: $color-black;
+$wc: $color-white;
+$bc: $color-black;
+$light: $color-gray;
+$dark: $color-black;
+$gold: $color-green;
+
+@mixin text-style-872-h-1() {
+	font-size: 42px;
+	font-family: $default-font;
+	font-weight: 300;
+	font-style: normal;
+	line-height: 100%;
+	letter-spacing: -0.04em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+@mixin text-style-872-h-2() {
+	font-size: 32px;
+	font-family: $default-font;
+	font-weight: 300;
+	font-style: normal;
+	line-height: 100%;
+	letter-spacing: -0.04em;
+	text-decoration: none;
+	text-transform: none;
+}
+@mixin text-style-872-h-3() {
+	font-size: 24px;
+	font-family: $default-font;
+	font-weight: 300;
+	font-style: normal;
+	line-height: 120%;
+	letter-spacing: -0.04em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+@mixin text-style-872-buttons() {
+	font-size: 12px;
+	font-family: Unbounded;
+	font-weight: 900;
+	font-style: normal;
+	line-height: 120%;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+@mixin text-style-768-h-1() {
+	font-size: 80.00000762939453px;
+	font-family: $default-font;
+	font-weight: 300;
+	font-style: normal;
+	line-height: 86%;
+	letter-spacing: -0.04em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+@mixin text-style-768-h-2() {
+	font-size: 64px;
+	font-family: $default-font;
+	font-weight: 300;
+	font-style: normal;
+	line-height: 100%;
+	letter-spacing: -0.04em;
+	text-decoration: none;
+	text-transform: none;
+}
+@mixin text-style-768-h-3() {
+	font-size: 32px;
+	font-family: $default-font;
+	font-weight: 300;
+	font-style: normal;
+	line-height: 120%;
+	letter-spacing: -0.04em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+@mixin text-style-768-body-caps() {
+	font-size: 16px;
+	font-family: $default-font;
+	font-weight: 300;
+	font-style: normal;
+	line-height: 120%;
+	letter-spacing: -0.02em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+@mixin text-style-768-body() {
+	font-size: 16px;
+	font-family: $default-font;
+	font-weight: 300;
+	font-style: normal;
+	line-height: 140%;
+	letter-spacing: -0.02em;
+	text-decoration: none;
+	text-transform: none;
+}
+
+
+@mixin text-style-1920-h-1() {
+	font-size: Min(pxWidthInVw(200), 200px);
+	font-family: $default-font;
+	font-weight: 300;
+	font-style: normal;
+	line-height: 86%;
+	letter-spacing: -0.04em;
+	text-decoration: none;
+	text-transform: uppercase;
+	@media screen and (max-width:1024px){
+		@include text-style-768-h-1;
+	}
+	@media screen and (max-width:600px){
+		@include text-style-872-h-1;
+	}
+}
+@mixin text-style-1920-h-2() {
+	font-size: Min(pxWidthInVw(96), 96px);
+	font-family: $default-font;
+	font-weight: 300;
+	font-style: normal;
+	line-height: 100%;
+	letter-spacing: -0.04em;
+	text-decoration: none;
+	text-transform: none;
+	@media screen and (max-width:1024px){
+		@include text-style-768-h-2;
+	}
+	@media screen and (max-width:600px){
+		@include text-style-872-h-2;
+	}
+}
+@mixin text-style-1920-h-3() {
+	font-size: 36px;
+	font-size: Min(pxWidthInVw(36), 36px);
+	font-family: $default-font;
+	font-weight: 300;
+	font-style: normal;
+	line-height: 120%;
+	letter-spacing: -0.04em;
+	text-decoration: none;
+	text-transform: uppercase;
+	@media screen and (max-width:1024px){
+		@include text-style-768-h-3;
+	}
+	@media screen and (max-width:600px){
+		@include text-style-872-h-3;
+	}
+}
+@mixin text-style-1920-body-caps() {
+	font-size: 20px;
+	font-family: $default-font;
+	font-weight: 300;
+	font-style: normal;
+	line-height: 120%;
+	letter-spacing: -0.02em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+@mixin text-style-1920-body() {
+	font-size: 20px;
+	font-family: $default-font;
+	font-weight: 300;
+	font-style: normal;
+	line-height: 140%;
+	letter-spacing: -0.02em;
+	text-decoration: none;
+	text-transform: none;
+	@media screen and (max-width:600px){
+		@include text-style-768-body;
+	}
+}
+@mixin text-style-1920-buttons() {
+	font-size: 16px;
+	font-family: Unbounded;
+	font-weight: 900;
+	font-style: normal;
+	line-height: 120%;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+
+:root {
+	--in: cubic-bezier(0.13, 0.81, 0.23, 0.96);
+	--header-h: 86px;
+	--logo-w: 155px;
+	--sliceFigure: 239px;
+	--sliceFigure-big: 541px;
+	
+	--page-side-fields: 40px;
+	--section-v-offset: 150px;
+	--button-color: #001A58;
+}
+
+@media screen and (max-width: 1440px){
+  :root {
+    --header-h: 90px;
+    --logo-w: 120px;
+    --sliceFigure-big: 362px;
+	--section-v-offset: 100px;
+  }
+}
+
+
+
+@media screen and (max-width: 1024px){
+  :root {
+	--page-side-fields: 20px;
+    --header-h: 110px;
+    --logo-w: 90px;
+    --sliceFigure-big: 44px;
+  }
+}
+@media screen and (max-width: 600px){
+  	:root {
+		--header-h: 60px;
+		--sliceFigure: 100px;
+		--sliceFigure-big: 100px;
+		--page-side-fields: 20px;
+		--logo-w: 97px;
+  	}
+}
+
+
+.tablet {
+	--page-side-fields: 20px;
+	--section-v-offset: 50px;
+	--header-h: 80px;
+	.page__inner {
+		max-width: 100vw;
+		overflow: hidden;
+	}
+}
+
+// .mobile {
+// 	--page-side-fields: 10px;
+// 	--section-v-offset: 50px;
+// 	--header-h: 55px;
+// 	.page__inner {
+// 		max-width: 100vw;
+// 		overflow: hidden;
+// 	}
+// }
+
+:root {
+	--color-black: rgba(0,0,0,1);
+	--color-blue: rgba(35,43,62,1);
+	--color-white: rgba(255,255,255,1);
+	--color-new-blue: rgba(0,26,88,1);
+	--color-light-blue: rgba(77,95,139,1);
+	--color-gray-bg: #E6ECF2;
+}
+:root {
+	--color-white: rgba(247,249,251,1);
+	--color-gray: rgba(166,169,186,1);
+	--color-black: rgba(33,33,37,1);
+	--color-green: rgba(0,211,97,1);
+}
+
+@mixin resonsiveFontSize($size) {
+	font-size: calc(#{$size} / 1920 * 100vw);
+}
+
+.text-style-1920-h-1 {
+	@include text-style-1920-h-1;
+}
+.text-style-1920-h-2 {
+	@include text-style-1920-h-2;
+}
+.text-style-1920-h-3 {
+	@include text-style-1920-h-3;
+}
+.text-style-1920-body-caps {
+	@include text-style-1920-body-caps;
+}
+.text-style-1920-body {
+	@include text-style-1920-body;
+}
+.text-style-1920-buttons {
+	@include text-style-1920-buttons;
+}
+.text-style-768-h-1 {
+	@include text-style-768-h-1;
+}
+.text-style-768-h-2 {
+	@include text-style-768-h-2;
+}
+.text-style-768-h-3 {
+	@include text-style-768-h-3;
+}
+.text-style-768-body-caps {
+	@include text-style-768-body-caps;
+}
+.text-style-768-body {
+	@include text-style-768-body;
+}
+.text-style-872-h-1 {
+	@include text-style-872-h-1;
+}
+.text-style-872-h-2 {
+	@include text-style-872-h-2;
+}
+.text-style-872-h-3 {
+	@include text-style-872-h-3;
+}
+.text-style-872-buttons {
+	@include text-style-872-buttons;
+}

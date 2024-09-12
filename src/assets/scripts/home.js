@@ -268,7 +268,7 @@ function $quizItem(item, index, total = 0) {
     `;
 
     const $inputsList = inputs.map((input, i) => `
-        <div class="contact-screen-form__group" data-status="field--inactive" data-field-input="data-field-input" data-field-name="data-field-${input.name}">
+        <div class="contact-screen-form__group" data-lenis-prevent  data-status="field--inactive" data-field-input="data-field-input" data-field-name="data-field-${input.name}">
             <div class="contact-screen-form__group-message" data-input-message="data-input-message"></div>
             <div class="contact-screen-form__group-title">${input.placeholder}:</div>
             <input class="contact-screen-form__input" type="${input.type}" placeholder="${input.placeholder}" name="${input.name}" />

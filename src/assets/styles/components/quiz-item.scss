@@ -197,6 +197,9 @@
         padding: 4px;
         position: relative;
         background-color: var(--color-white);
+        border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    overflow: hidden;
         &-digit {
             color: var(--Black, #212125);
             text-align: center;
@@ -221,7 +224,7 @@
     }
     &__answer-block {
         border-radius: 12px;
-        overflow: hidden;
+        // overflow: hidden;
         border: var(--paddings-gaps-paddings-gaps-025, 1px) solid #E1E4F5;
         background: #E1E4F5;
     }

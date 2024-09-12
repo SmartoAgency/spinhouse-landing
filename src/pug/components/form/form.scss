@@ -442,6 +442,12 @@ textarea.form-field__input {
     visibility: visible;
     overflow: hidden;
     z-index: 1;
+    @media screen and (orientation: landscape) and (max-width: 1024px){
+      .contact-screen-form {
+        max-height: 100vh;
+        overflow-y: auto;
+      }
+    }
     .form-close {
       display: none;
     }

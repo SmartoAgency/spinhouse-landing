@@ -11,6 +11,10 @@
 		padding: 0 0 0 var(--page-side-fields);
 	}
 
+	@media screen and (orientation: landscape) and (max-width: 1024px){
+        height: 50px;
+    }
+
 	&--dark {
 		.header__logo-wrap svg {
 			[fill] {
@@ -450,6 +454,9 @@
 			@include text-style-768-h-1;
 			@media screen and (max-width:600px){
 				@include text-style-872-h-1;
+			}
+			@media screen and (orientation: landscape) and (max-width: 1024px){
+				font-size: 24px;
 			}
 			margin-bottom: 20px;
 		}

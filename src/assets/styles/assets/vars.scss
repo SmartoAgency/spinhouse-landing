@@ -145,6 +145,9 @@ $gold: $color-green;
 	@media screen and (max-width:600px){
 		@include text-style-872-h-1;
 	}
+	@media screen and (orientation: landscape) and (max-width: 1024px) {
+		font-size: 48px;
+	}
 }
 @mixin text-style-1920-h-2() {
 	font-size: Min(pxWidthInVw(96), 96px);
@@ -210,6 +213,9 @@ $gold: $color-green;
 	line-height: 120%;
 	text-decoration: none;
 	text-transform: uppercase;
+	@media screen and (orientation: landscape) and (max-width: 1024px) {
+		font-size: 14px;
+	}
 }
 
 

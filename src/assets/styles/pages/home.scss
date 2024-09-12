@@ -6,6 +6,9 @@
     position: relative;
     padding-left: var(--page-side-fields);
     padding-right: var(--page-side-fields);
+    @media screen and (orientation: landscape) and (max-width: 1024px){
+        height: 200vh;
+    }
 }
 
 .home-front-screen {

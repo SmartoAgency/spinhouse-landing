@@ -87,8 +87,12 @@
                 padding-top: 20px;
             }
         }
+        
     }
-    .contact-screen-form { grid-area: form; }
+    .contact-screen-form { 
+        grid-area: form; 
+        
+    }
     &__description { 
         grid-area: description; 
         @include to(1024px){

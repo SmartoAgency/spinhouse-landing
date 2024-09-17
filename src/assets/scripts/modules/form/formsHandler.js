@@ -24,7 +24,7 @@ export function formsHandler() {
           showSuccessMessage: false,
           successAction: () => {
             formWrapperSuccess.classList.add('active');
-            modal.classList.remove('active');
+            // modal.classList.remove('active');
             gsap.fromTo(formWrapperSuccess, { opacity: 0 }, { opacity: 1 });
             document.querySelector('[data-form-popup-close]').click();
             

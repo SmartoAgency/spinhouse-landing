@@ -173,7 +173,9 @@ async function quizBlock() {
 
         const isChecked = $currentQuestion.querySelector('input:checked');
         if (!isChecked) {
-            $currentQuestion.querySelector('[data-quiz-block-next]').disabled = true;
+            if ($currentQuestion.querySelector('[data-quiz-block-next]')) {
+                $currentQuestion.querySelector('[data-quiz-block-next]').disabled = true;
+            }
         }
         
     });

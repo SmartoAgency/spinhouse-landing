@@ -336,8 +336,8 @@ document.querySelectorAll('.home-features-block__bottom-item-img').forEach((el, 
         opacity: 0,
         duration: 10,
         delay: index * 0.2,
-        start: '100% bottom',
         scrollTrigger: {
+            start: '100% bottom',
             trigger: el,
             once: true
         },
@@ -356,7 +356,7 @@ function applyScrollTriggerAnimation(selectors) {
                 once: true,
             },
         })
-            .fromTo(el.children,
+            .fromTo(Array.from(el.children),
                 { y: 25, autoAlpha: 0 },
                 { y: 0, autoAlpha: 1, clearProps: 'all', duration: 1.25, ease: 'power4.out', stagger: 0.1 },
             );

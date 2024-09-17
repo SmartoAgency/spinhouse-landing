@@ -37,10 +37,10 @@ Swiper.use([EffectFade, Navigation, Pagination, Thumbs, FreeMode]);
 /*
  * smooth scroll start
  */
+gsap.registerPlugin(ScrollTrigger);
 gsap.core.globals("ScrollTrigger", ScrollTrigger);
 // global.gsap = gsap;
 
-gsap.registerPlugin(ScrollTrigger);
 
 
 formsHandler();

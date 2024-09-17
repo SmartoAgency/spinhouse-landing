@@ -39,9 +39,9 @@ export function formsHandler() {
               rule: yup
                 .string()
                 .required(i18next.t('required'))
-                .matches(/^[А-Яа-яІіЇїҐґA-Za-z]+$/, i18next.t('invalid_name'))
+                .matches(/^[А-Яа-яІіЇїҐґA-Za-z\s0-9]+$/, i18next.t('invalid_name'))
                 .min(2, i18next.t('name_too_short', { cnt: 2 }))
-                .max(15, i18next.t('name_too_long', { cnt: 15 }))
+                .max(15, i18next.t('name_too_long', { cnt: 24 }))
                 .trim(),
               defaultMessage: i18next.t('name'),
               valid: false,
@@ -111,9 +111,9 @@ export function quizFormHandler(successAction) {
               rule: yup
                 .string()
                 .required(i18next.t('required'))
-                .matches(/^[А-Яа-яІіЇїҐґA-Za-z]+$/, i18next.t('invalid_name'))
+                .matches(/^[А-Яа-яІіЇїҐґA-Za-z\s0-9]+$/, i18next.t('invalid_name'))
                 .min(2, i18next.t('name_too_short', { cnt: 2 }))
-                .max(15, i18next.t('name_too_long', { cnt: 15 }))
+                .max(15, i18next.t('name_too_long', { cnt: 24 }))
                 .trim(),
               defaultMessage: i18next.t('name'),
               valid: false,

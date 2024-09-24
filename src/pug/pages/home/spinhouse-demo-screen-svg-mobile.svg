@@ -117,6 +117,17 @@
           </g>
         </g>
         <g class="roomtour" data-tablet-click="roomtour" data-type="video" data-src="./assets/images/spinhouse-demo/tablet-popups/roomtour.mp4" data-title="Showroom pin">
+          <g>
+              <path stroke="#F7F9FB" stroke-width="2" d="M129 448.348v-38.346c10-2 13-2.502 21.5-3.502v40.001c-7.5 0-14 1-21.5 1.847Z" class="Vector 364"/>
+            </g>
+            <g class="Icon">
+              <rect width="28" height="28" x="104" y="395" fill="#111112" rx="14"/>
+              <g class="Plus">
+                <path fill="#F7F9FB" fill-rule="evenodd" d="M118.693 404.422v4.121h4.122v1.153h-4.122v4.121h-1.152v-4.121h-4.121v-1.153h4.121v-4.121h1.152Z" class="icon" clip-rule="evenodd"/>
+              </g>
+          </g>
+        </g>
+        <g class="roomtour" data-tablet-click="roomtour" data-type="video" data-src="./assets/images/spinhouse-demo/tablet-popups/roomtour.mp4" data-title="Showroom pin">
           <rect width="28" height="28" x="312" y="386" fill="#111112" rx="14"/>
           <g class="Plus">
             <path fill="#F7F9FB" fill-rule="evenodd" d="M326.954 395.586v4.194h4.194v1.173h-4.194v4.194h-1.174v-4.194h-4.194v-1.173h4.194v-4.194h1.174Z" class="icon" clip-rule="evenodd"/>

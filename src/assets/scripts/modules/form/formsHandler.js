@@ -56,7 +56,7 @@ export function formsHandler() {
               rule: yup
                 .string()
                 .required(i18next.t('required'))
-                .min(17, i18next.t('field_too_short', { cnt: 19 - 6 })),
+                .min(14, i18next.t('field_too_short', { cnt: 19 - 9 })),
               defaultMessage: i18next.t('phone'),
               valid: false,
               error: [],
@@ -128,7 +128,7 @@ export function quizFormHandler(successAction) {
               rule: yup
                 .string()
                 .required(i18next.t('required'))
-                .min(17, i18next.t('field_too_short', { cnt: 19 - 6 })),
+                .min(14, i18next.t('field_too_short', { cnt: 19 - 9 })),
               defaultMessage: i18next.t('phone'),
               valid: false,
               error: [],

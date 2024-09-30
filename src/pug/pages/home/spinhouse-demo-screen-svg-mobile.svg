@@ -1,6 +1,6 @@
 <svg class="show-on-mobile" xmlns="http://www.w3.org/2000/svg" width="375" height="630" fill="none" viewBox="0 0 375 630">
   <g class="Image" class="show-on-mobile">
-    <image loading="lazy" y="76" x="0" width="375" height="630" class="g svg_house" href="./assets/images/spinhouse-demo/House-mobile.png"/>
+    <image loading="lazy" y="45" x="0" width="375" height="630" class="g svg_house" href="./assets/images/spinhouse-demo/House-mobile.png"/>
     <g class="Pins">
       <g class="Markers">
         <path stroke="#F7F9FB" stroke-width="2" d="M294.5 379.5c-.408-10.543-1.284-31.691-1.528-31.935C292.972 339.63 259 290 178 290c-84 0-104 50-104 60.5v20C102.5 336 130.5 328 178 328s97.5 20 116.5 51.5Z" class="Vector 362"/>

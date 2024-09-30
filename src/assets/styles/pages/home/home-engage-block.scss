@@ -73,7 +73,7 @@
     }
     &__button { 
         grid-area: button; 
-        padding-top: 40px;
+        // padding-top: 40px;
         @include to(600px){
             padding-top: 20px;
             button {

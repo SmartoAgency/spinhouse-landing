@@ -29,7 +29,7 @@
 .driver-overlay path {
   stroke: white;
   stroke-width: 6px;
-  cursor: zoom-out;
+  cursor: zoom-out !important;
 }
 
 .driver-fade .driver-popover {

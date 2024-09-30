@@ -5,6 +5,11 @@
     min-height: calc(var(--vh, 1vh) * 100);
     padding: pxInVh(156) var(--page-side-fields) pxInVh(240) var(--page-side-fields);
     overflow: hidden;
+    @include from(1620px){
+        
+        margin-top: -1px;
+        padding-top: 120px;
+    }
 
     @include to(1024px){
         padding: 150px var(--page-side-fields);
@@ -43,6 +48,9 @@
         height: 600px;
         pointer-events: none;
         transform: translateX(50%) translateY(50%);
+        width: 50vw;
+        height: 50vw;
+        opacity: 0.5;
         @media screen and (max-width:1024px){
             opacity: 0.5;
             width: 120vw;

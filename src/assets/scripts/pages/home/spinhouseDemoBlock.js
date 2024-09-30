@@ -58,60 +58,117 @@ export default function spinhouseDemoBlock() {
 
     };
 
-    document.body.addEventListener('click',function spinhouseDemoBlockPinsHandler(evt){
+    document.querySelectorAll('[data-spinhouse-demo-icon]').forEach((el) => {
+        el.addEventListener('mouseenter', function spinhouseDemoBlockPinsHandler(evt){
 
 
-        console.log(pinsInstanses);
-        
-        const target = evt.target.closest('[data-spinhouse-demo-icon]');
-        if (!target) return;
-        const attrValue = target.getAttribute('data-spinhouse-demo-icon');
-        if (pinsInstanses[attrValue]) {
-            pinsInstanses[attrValue].highlight(pinsInstanses[attrValue].conf);
+            console.log(pinsInstanses);
             
-            return;
-        }
-
-        const type = target.dataset.type;
-        let layout = '';
-
-        switch (type) {
-            case 'text':
-                layout = infoBoxes.text(target.dataset.title, target.dataset.text);
-                break;
-            case 'image':
-                layout = infoBoxes.image(target.dataset.src);
-                break;
-            case 'video':
-                layout = infoBoxes.video(target.dataset.title, target.dataset.src);
-                break;
-            case 'image_with_text':
-                layout = infoBoxes.image_with_text(target.dataset.title, target.dataset.src);
-                break;
-            default:
-                break;
-        }
-
-        pinsInstanses[attrValue] = driver();
-        const $elementToHightlight = document.querySelector(`[data-hightlight-on-open="${attrValue}"]`);
-        const thisPinConfig = {
-            element: $elementToHightlight,
-            onHighlighted: (element, insta) => {
-                console.log('onHighlighted', element, insta);
-                if (target.dataset.ratio) {
-                    document.querySelector('.driver-popover .infobox__fixed-ratio-block').style.paddingBottom = target.dataset.ratio+'%';
-                }
-            },
-            popover: {
-                side: 'right',
-                description: layout
+            const target = evt.target.closest('[data-spinhouse-demo-icon]');
+            if (!target) return;
+            const attrValue = target.getAttribute('data-spinhouse-demo-icon');
+            if (pinsInstanses[attrValue]) {
+                pinsInstanses[attrValue].highlight(pinsInstanses[attrValue].conf);
+                
+                return;
             }
-        };
-
-        pinsInstanses[attrValue].conf = thisPinConfig;
-
-        pinsInstanses[attrValue].highlight(pinsInstanses[attrValue].conf);
+    
+            const type = target.dataset.type;
+            let layout = '';
+    
+            switch (type) {
+                case 'text':
+                    layout = infoBoxes.text(target.dataset.title, target.dataset.text);
+                    break;
+                case 'image':
+                    layout = infoBoxes.image(target.dataset.src);
+                    break;
+                case 'video':
+                    layout = infoBoxes.video(target.dataset.title, target.dataset.src);
+                    break;
+                case 'image_with_text':
+                    layout = infoBoxes.image_with_text(target.dataset.title, target.dataset.src);
+                    break;
+                default:
+                    break;
+            }
+    
+            pinsInstanses[attrValue] = driver();
+            const $elementToHightlight = document.querySelector(`[data-hightlight-on-open="${attrValue}"]`);
+            const thisPinConfig = {
+                element: $elementToHightlight,
+                onHighlighted: (element, insta) => {
+                    console.log('onHighlighted', element, insta);
+                    if (target.dataset.ratio) {
+                        document.querySelector('.driver-popover .infobox__fixed-ratio-block').style.paddingBottom = target.dataset.ratio+'%';
+                    }
+                },
+                popover: {
+                    side: 'right',
+                    description: layout
+                }
+            };
+    
+            pinsInstanses[attrValue].conf = thisPinConfig;
+    
+            pinsInstanses[attrValue].highlight(pinsInstanses[attrValue].conf);
+        });
     });
+
+    // document.body.addEventListener('click',function spinhouseDemoBlockPinsHandler(evt){
+
+
+    //     console.log(pinsInstanses);
+        
+    //     const target = evt.target.closest('[data-spinhouse-demo-icon]');
+    //     if (!target) return;
+    //     const attrValue = target.getAttribute('data-spinhouse-demo-icon');
+    //     if (pinsInstanses[attrValue]) {
+    //         pinsInstanses[attrValue].highlight(pinsInstanses[attrValue].conf);
+            
+    //         return;
+    //     }
+
+    //     const type = target.dataset.type;
+    //     let layout = '';
+
+    //     switch (type) {
+    //         case 'text':
+    //             layout = infoBoxes.text(target.dataset.title, target.dataset.text);
+    //             break;
+    //         case 'image':
+    //             layout = infoBoxes.image(target.dataset.src);
+    //             break;
+    //         case 'video':
+    //             layout = infoBoxes.video(target.dataset.title, target.dataset.src);
+    //             break;
+    //         case 'image_with_text':
+    //             layout = infoBoxes.image_with_text(target.dataset.title, target.dataset.src);
+    //             break;
+    //         default:
+    //             break;
+    //     }
+
+    //     pinsInstanses[attrValue] = driver();
+    //     const $elementToHightlight = document.querySelector(`[data-hightlight-on-open="${attrValue}"]`);
+    //     const thisPinConfig = {
+    //         element: $elementToHightlight,
+    //         onHighlighted: (element, insta) => {
+    //             console.log('onHighlighted', element, insta);
+    //             if (target.dataset.ratio) {
+    //                 document.querySelector('.driver-popover .infobox__fixed-ratio-block').style.paddingBottom = target.dataset.ratio+'%';
+    //             }
+    //         },
+    //         popover: {
+    //             side: 'right',
+    //             description: layout
+    //         }
+    //     };
+
+    //     pinsInstanses[attrValue].conf = thisPinConfig;
+
+    //     pinsInstanses[attrValue].highlight(pinsInstanses[attrValue].conf);
+    // });
 }
 
 

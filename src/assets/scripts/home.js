@@ -5,6 +5,18 @@ import spinhouseDemoBlockTablet from "./pages/home/spinhouseDemoBlockTablet";
 import { useState } from "./modules/helpers/helpers";
 import Typed from "typed.js";
 import { quizFormHandler } from "./modules/form/formsHandler";
+import { debounce } from "lodash";
+
+function setVh() {
+    let vh = document.documentElement.clientHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+setVh();
+
+const debouncedSetVh = debounce(setVh, 200);
+
+window.addEventListener('resize', setVh);
 
 
 document.body.addEventListener('click',function tabletMenuHandler(evt){
@@ -47,12 +59,12 @@ function forThoseWhoLeadBlockParalax() {
         }
     })
     .fromTo(img, {
-        y: -250,
+        y: -100,
         x: 0,
         scale: 1.1,
     },{
         y: 0,
-        x: 120,
+        x: 60,
         scale: 1,
     })
     ;
@@ -72,8 +84,8 @@ function featuresBlockParalax() {
         x: 0,
         scale: 1.1,
     },{
-        y: window.screen.height * 0.5,
-        x: 120,
+        y: window.screen.height * 0.15,
+        x: 60,
         scale: 1,
     });
 }
@@ -103,7 +115,8 @@ featuresBlockParalax();
 
 forThoseWhoLeadBlockParalax();
 
-splitToLinesAndFadeUp('.home-for-who-block__title, .text-style-1920-h-1:not(.home-engage-block__text1):not(.home-engage-block__text2)', gsap);
+splitToLinesAndFadeUp('.home-for-who-block__title, .text-style-1920-h-1:not(.home-engage-block__text1):not(.home-engage-block__text2), .home-engage-block__description', gsap);
+splitToLinesAndFadeUp('.home-engage-block__text1, .home-engage-block__text2 span:not(.text-stroke-white), .transform-vision-into-reality-block__title1, .transform-vision-into-reality-block__title2', gsap);
 
 quizBlockParalax();
 
@@ -331,19 +344,6 @@ document.body.addEventListener('click',function(evt){
 });
 
 
-document.querySelectorAll('.home-features-block__bottom-item-img').forEach((el, index) => {
-    gsap.from(el.querySelector('img:last-child'), {
-        opacity: 0,
-        duration: 10,
-        delay: index * 0.2,
-        scrollTrigger: {
-            start: '100% bottom',
-            trigger: el,
-            once: true
-        },
-    });
-});
-
 //home-features-block__item
 
 function applyScrollTriggerAnimation(selectors) {
@@ -362,5 +362,4 @@ function applyScrollTriggerAnimation(selectors) {
             );
     });
 }
-
 applyScrollTriggerAnimation('.contact-screen-form, .home-features-block__item, .home-for-who-block__item, .transform-vision-into-reality-block__description');

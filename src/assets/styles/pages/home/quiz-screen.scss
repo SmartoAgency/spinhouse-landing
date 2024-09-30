@@ -2,6 +2,9 @@
     position: relative;
     background-color: #09090A;
     min-height: calc(var(--vh, 1vh) * 100);
+    @include from(1720px){
+        min-height: auto;
+    }
     padding: pxInVh(210) var(--page-side-fields) pxInVh(100) var(--page-side-fields);
     overflow: hidden;
     @include to(1024px){

@@ -24,19 +24,6 @@
     },
 
     {
-        "dialog": "Awesome, let’s move on!",
-        "question": "In which region is your project located?",
-        "name": "projectRegion",
-        "answers": [
-            "Europe",
-            "North America",
-            "Middle East",
-            "Asia",
-            "Other"
-        ]
-    },
-
-    {
         "dialog": "Thanks for your answer! Just a few more steps to go.",
         "question": "What is the brand level of your project?",
         "name": "projectBrand",
@@ -82,7 +69,8 @@
             "Video Sphere (3D animation and video)",
             "Full Website Development",
             "Premium Visualization and Renderings",
-            "DevBase (CRM system for sales management)"
+            "DevBase (CRM system for sales management)",
+            "No additional services needed"
         ]
     },
 

@@ -90,7 +90,7 @@ const forms = [
 
 const [fromPopup, setFormPopup, useSetPopupEffect ] = useState(false);
 
-useSetPopupEffect(val => {
+useSetPopupEffect(({val, text}) => {
   if (val) {
     gsap.timeline().to('[data-form-popup]', {
       autoAlpha: 1,
@@ -100,6 +100,7 @@ useSetPopupEffect(val => {
       document.body.style.overflow = 'hidden';
     })
     ;
+    document.querySelector('[data-form-popup] button[type="submit"] span').textContent = text;
     return;
   }
   gsap.timeline().to('[data-form-popup]', {
@@ -116,10 +117,18 @@ useSetPopupEffect(val => {
 document.body.addEventListener('click', (evt) => {
   const target = evt.target.closest('[data-form-popup-call]');
   if (!target) return;
-  setFormPopup(true);
+  console.log('target', target);
+  
+  setFormPopup({
+    val: true,
+    text: target.querySelector('span').textContent
+  });
 })
 document.body.addEventListener('click', (evt) => {
   const target = evt.target.closest('[data-form-popup-close]');
   if (!target) return;
-  setFormPopup(false);
+  setFormPopup({
+    val: false,
+    text: ''
+  });
 })

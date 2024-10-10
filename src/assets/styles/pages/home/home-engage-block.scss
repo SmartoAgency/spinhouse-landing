@@ -62,7 +62,8 @@
     &__text2 { 
         grid-area: text2; 
         @include from(1025px){
-            text-align: right;
+            padding-left: 32.3%;
+            // text-align: right;
         }
     }
     &__description { 

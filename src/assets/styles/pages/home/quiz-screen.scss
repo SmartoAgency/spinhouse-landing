@@ -40,7 +40,11 @@
     }
     &__description {
         width: pxWidthInVw(360);
+        width: 20.1%;
         margin-right: 21px;
+        @include from(1025px){
+            padding-top: 40px;
+        }
         @include to(1024px){
             width: 100%;
             padding-right: 60%;

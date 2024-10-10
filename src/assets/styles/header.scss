@@ -87,9 +87,14 @@
 			margin-right: 12px;
 		}
 	}
-  &>:first-child {
-    margin-right: auto;
-  }
+	&>:first-child {
+		@include from(1025px){
+			margin-right: 10.3%;
+		}
+		@include to(1024px){
+			margin-right: auto;
+		}
+	}
 	@include from-to(1025px, 1360px){
 		--between-margin: 15px;
 	}

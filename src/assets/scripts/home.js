@@ -5,7 +5,7 @@ import spinhouseDemoBlockTablet from "./pages/home/spinhouseDemoBlockTablet";
 import { useState } from "./modules/helpers/helpers";
 import Typed from "typed.js";
 import { quizFormHandler } from "./modules/form/formsHandler";
-import { debounce } from "lodash";
+import { debounce, once } from "lodash";
 
 function setVh() {
     let vh = document.documentElement.clientHeight * 0.01;
@@ -129,12 +129,44 @@ function typedAnimation(block) {
     })
 }
 function progressBarUpdate(number, $line, $bar) {
-    $bar.textContent = (number * 100).toFixed(2);
+    // $bar.textContent = (number * 100).toFixed(2);
+    gsap.timeline().counter($bar, {end:number * 100, ease:"linear"})
     gsap.to($line, {
         scaleX: number,
     });
 }
 
+
+gsap.registerEffect({
+    name: "counter",
+    extendTimeline: true,
+    defaults: {
+        end: 0,
+        duration: 0.5,
+        ease: "power1",
+        increment: 1,
+    },
+    effect: (targets, config) => {
+        let tl = gsap.timeline()
+        let num = targets[0].innerText.replace(/\,/g, '')
+        targets[0].innerText = num
+
+        tl.to(targets, {
+            duration: config.duration,
+            innerText: config.end,
+            //snap:{innerText:config.increment},
+            modifiers: {
+                innerText: function (innerText) {
+                    return gsap.utils.snap(config.increment, innerText).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+                }
+            },
+            ease: config.ease
+        }, 0)
+
+        return tl
+    }
+})
 
 async function quizBlock() {
     const form = document.querySelector('[data-quiz-form]');
@@ -164,32 +196,76 @@ async function quizBlock() {
         const $quizItems = quizItem.querySelectorAll('.quiz-item__answer-item');
         const quizProgress = gsap.utils.mapRange(0, $quizItems.length - 1, 0, 1, index+2);
 
-        quizItem.querySelectorAll('[data-index]').forEach(($item, i) => {
-            if ($item.dataset.index == index) {
-                $item.classList.add('active');
-            } else {
-                $item.classList.remove('active');
-            }
-        });
+        gsap.timeline()
+            .fromTo('.quiz-item__answer-item .quiz-item__answer-item-title, .quiz-item__answer-item .quiz-item__answer-item-checkbox-wrapper>*', 
+                {
+                    autoAlpha: 1,
+                }, 
+                {
+                    autoAlpha: 0,
+                    y: 10,
+                    duration: 0.25,
+                }
+            )
+            .fromTo('.quiz-item__answer-item.active .quiz-item__counter span', {
+                clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'
+            }, {
+                clipPath: 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)',
+                duration: 0.25
+            }, '<')
+            .add(() => {
 
-        typedAnimation(quizItem.querySelector('span.active'));
+                quizItem.querySelectorAll('[data-index]').forEach(($item, i) => {
+                    if ($item.dataset.index == index) {
+                        $item.classList.add('active');
+                    } else {
+                        $item.classList.remove('active');
+                    }
+                });
+                typedAnimation(quizItem.querySelector('span.active'));
+
+                progressBarUpdate(
+                    quizProgress,
+                    quizItem.querySelector('[data-quiz-item-progress-bar-fill]'), 
+                    quizItem.querySelector('[data-quiz-item-progress-bar-number]')
+                );
+                quizProgressBar.style.display = index >= quizData.length - 2 ? 'none' : '';
         
-        progressBarUpdate(
-            quizProgress,
-            quizItem.querySelector('[data-quiz-item-progress-bar-fill]'), 
-            quizItem.querySelector('[data-quiz-item-progress-bar-number]')
-        );
-        quizProgressBar.style.display = index >= quizData.length - 2 ? 'none' : '';
+        
+                const $currentQuestion = quizItem.querySelector(`.quiz-item__answer-item[data-index="${index}"]`);
+        
+                const isChecked = $currentQuestion.querySelector('input:checked');
+                if (!isChecked) {
+                    if ($currentQuestion.querySelector('[data-quiz-block-next]')) {
+                        $currentQuestion.querySelector('[data-quiz-block-next]').disabled = true;
+                    }
+                }
+            })
+            .add(() => {
+                gsap.timeline()
+                    .fromTo('.quiz-item__answer-item.active .quiz-item__answer-item-title, .quiz-item__answer-item.active .quiz-item__answer-item-checkbox-wrapper>*', 
+                        {
+                            autoAlpha: 0,
+                            y: -10
+                        }, {
+                            autoAlpha: 1,
+                            stagger: 0.1,
+                            y: 0
+                        }
+                    )
+                    .fromTo('.quiz-item__answer-item.active .quiz-item__counter span', {
+                        clipPath: 'polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)',
+                    }, {
+                        clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
+                        duration: 0.25
+                    }, '<')
+            })
 
 
-        const $currentQuestion = quizItem.querySelector(`.quiz-item__answer-item[data-index="${index}"]`);
 
-        const isChecked = $currentQuestion.querySelector('input:checked');
-        if (!isChecked) {
-            if ($currentQuestion.querySelector('[data-quiz-block-next]')) {
-                $currentQuestion.querySelector('[data-quiz-block-next]').disabled = true;
-            }
-        }
+
+        
+
         
     });
     

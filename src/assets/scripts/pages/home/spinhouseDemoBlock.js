@@ -113,6 +113,17 @@ export default function spinhouseDemoBlock() {
     
             pinsInstanses[attrValue].highlight(pinsInstanses[attrValue].conf);
         });
+
+        el.addEventListener('mouseleave', function spinhouseDemoBlockPinsHandler(evt){
+            const target = evt.target;
+            const attrValue = target.getAttribute('data-spinhouse-demo-icon');
+            if (pinsInstanses[attrValue]) {
+                pinsInstanses[attrValue].destroy();
+                
+                return;
+            }
+            
+        });
     });
 
     // document.body.addEventListener('click',function spinhouseDemoBlockPinsHandler(evt){

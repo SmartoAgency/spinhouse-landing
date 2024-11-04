@@ -5,12 +5,23 @@
     padding-left: var(--page-side-fields);
     padding-right: var(--page-side-fields);
     overflow: hidden;
+    image {
+        pointer-events: none;
+    }
     @include to(1024px){
         height: calc(100vw / 768 * 954);
     }
     @media screen and (max-width:600px){
         height: 168vw;
     }
+
+    [data-spinhouse-demo-icon] {
+        pointer-events: all;
+        &>* {
+            pointer-events: none;
+        }
+    }
+
     &__svg {
         .Icon {
             cursor: pointer;
@@ -194,5 +205,12 @@
             height: 100%;
             object-fit: cover;
         }
+    }
+}
+
+
+.driver-fade .driver-overlay {
+    path {
+        pointer-events: none !important;
     }
 }

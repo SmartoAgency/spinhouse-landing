@@ -75,6 +75,9 @@
     &__button { 
         grid-area: button; 
         // padding-top: 40px;
+        @include from(1025px){
+            margin-top: 48px;
+        }
         @include to(600px){
             padding-top: 20px;
             button {

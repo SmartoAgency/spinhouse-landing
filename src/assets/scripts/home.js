@@ -448,4 +448,45 @@ function frontScreenParalax() {
 
 window.addEventListener('load', () => {
     frontScreenParalax();
+});
+
+
+gsap.set('[data-spinhouse-demo-icon]', {
+    animation: 'none',
 })
+gsap.timeline({
+    scrollTrigger: {
+        trigger: '.spinhouse-demo-screen',
+        once: true,
+        start: '50% center',
+    }
+})
+    
+    .fromTo('[data-spinhouse-demo-icon]', {
+        autoAlpha: 0,
+        fill: '#005450',
+    }, {
+        autoAlpha: 1,
+        stagger: 0.2,
+    })
+    .add(() => {
+        setTimeout(() => {
+            gsap.set('[data-spinhouse-demo-icon]', {
+                animation: '',
+                fill: '',
+            })
+        }, 1000);
+    })
+gsap.timeline({
+    scrollTrigger: {
+        trigger: '.spinhouse-demo-screen',
+        scrub: 0.5,
+        start: '20% center',
+        end: '80% center',
+    }
+})
+    .fromTo('.spinhouse-demo-screen__title', {
+        y: window.screen.width < 600 ? -30 : -80,
+    }, {
+        y: window.screen.width < 600 ? 30 : window.screen.height * 0.1,
+    })

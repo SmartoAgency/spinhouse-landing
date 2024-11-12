@@ -260,13 +260,6 @@ async function quizBlock() {
                         duration: 0.25
                     }, '<')
             })
-
-
-
-
-        
-
-        
     });
     
     
@@ -439,3 +432,20 @@ function applyScrollTriggerAnimation(selectors) {
     });
 }
 applyScrollTriggerAnimation('.contact-screen-form, .home-features-block__item, .home-for-who-block__item, .transform-vision-into-reality-block__description');
+
+
+function frontScreenParalax() {
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: '.spinhouse-demo-screen',
+            scrub: 1,
+        }
+    })
+        .to('.home-front-screen', {
+            y: window.screen.height * 0.5
+        })
+}
+
+window.addEventListener('load', () => {
+    frontScreenParalax();
+})

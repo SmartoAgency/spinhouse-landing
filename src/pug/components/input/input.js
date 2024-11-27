@@ -118,16 +118,17 @@ export default class SexyInput {
         preferredCountries: ['us' ,'ua', 'pl', 'ca', 'se', 'it', 'es','fr', 'tr', 'de', 'gb'],
         defaultCountry: 'us',
         excludeCountries: ['ru'],
-        autoPlaceholder: 'off',
+        countrySearch: true,
       });
       let cleave = new Cleave(input, {
         /* eslint-enable */
         numericOnly: true,
-        prefix: '+1',
-        blocks: [2, 4, 3, 2, 2, 2, 2, 2, 2, 2],
+        prefix: '+',
+        blocks: [3, 3, 3, 2, 2, 2, 2, 2, 2, 2],
         delimiters: [' ', ' ', ' ', '', '', '', '', '', ''],
       });
       input.addEventListener('countrychange', () => {
+        return;
         const currentCountry = input.intTelIput.getSelectedCountryData();
         const { dialCode } = currentCountry;
         const selfInput = input;
@@ -158,18 +159,21 @@ export default class SexyInput {
           default:
             break;
         }
-        cleave.destroy();
+        // cleave.destroy();
         selfInput.value = '';
-        cleave = new Cleave(input, {
-          numericOnly: true,
-          delimiter: '-',
-          prefix: `+${dialCode}`,
-          /* В код страны добавляется символ + */
-          blocks: [dialCode.toString().length + 1, maskPartForUkraine, 3, 2, 2, 2, 2, 2, 2, 2],
-          delimiters: [' ', ' ', ' ', '', '', '', '', '', ''],
-        });
+        // cleave = new Cleave(input, {
+        //   numericOnly: true,
+        //   delimiter: '-',
+        //   prefix: `+${dialCode}`,
+        //   /* В код страны добавляется символ + */
+        //   blocks: [dialCode.toString().length + 1, maskPartForUkraine, 3, 2, 2, 2, 2, 2, 2, 2],
+        //   delimiters: [' ', ' ', ' ', '', '', '', '', '', ''],
+        // });
       });
+      input.value = '+1';
     }
+
+
 
     if (this.animation === 'focus') {
       input.addEventListener('focus', self.selectIn(self));

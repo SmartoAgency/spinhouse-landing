@@ -111,15 +111,20 @@ export default class SexyInput {
   listeners(input) {
     const self = this;
 
+    const defaultCountryFromBackend = document.body.getAttribute('data-country-code') ? document.body.getAttribute('data-country-code') : 'us';
+
+    const prefferedCountries = defaultCountryFromBackend == 'us' ? ['us'] : [defaultCountryFromBackend, 'us']; 
+
     if (this.typeInput === 'phone') {
       /* eslint-disable */
       input.setAttribute('inputmode', 'tel');
       input.intTelIput = intlTelInput(input, {
-        preferredCountries: ['us' ,'ua', 'pl', 'ca', 'se', 'it', 'es','fr', 'tr', 'de', 'gb'],
-        defaultCountry: 'us',
+        preferredCountries: [...prefferedCountries, 'ua', 'pl', 'ca', 'se', 'it', 'es','fr', 'tr', 'de', 'gb'],
+        defaultCountry: defaultCountryFromBackend,
         excludeCountries: ['ru'],
         countrySearch: true,
       });
+      
       let cleave = new Cleave(input, {
         /* eslint-enable */
         numericOnly: true,
@@ -170,7 +175,7 @@ export default class SexyInput {
         //   delimiters: [' ', ' ', ' ', '', '', '', '', '', ''],
         // });
       });
-      input.value = '+1';
+      input.value = '+'+input.intTelIput.getSelectedCountryData().dialCode;
     }
 
 

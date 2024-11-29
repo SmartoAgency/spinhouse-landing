@@ -61,20 +61,20 @@ export function formsHandler() {
               valid: false,
               error: [],
             },
-            // email: {
-            //   inputWrapper: new SexyInput({
-            //     animation: 'none',
-            //     $field: $form.querySelector('[data-field-name="data-field-email"]'),
-            //     typeInput: 'email',
-            //   }),
-            //   rule: yup
-            //     .string()
-            //     .required(i18next.t('required'))
-            //     .matches(/^[A-Z0-9._%+-]+@[A-Z0-9-]+\.[A-Z]{2,3}$/i, i18next.t('invalid_email')),
-            //   defaultMessage: i18next.t('email'),
-            //   valid: false,
-            //   error: [],
-            // }
+            email: {
+              inputWrapper: new SexyInput({
+                animation: 'none',
+                $field: $form.querySelector('[data-field-name="data-field-email"]'),
+                typeInput: 'email',
+              }),
+              rule: yup
+                .string()
+                .required(i18next.t('required'))
+                .matches(/^[A-Z0-9._%+-]+@[A-Z0-9-]+\.[A-Z]{2,3}$/i, i18next.t('invalid_email')),
+              defaultMessage: i18next.t('email'),
+              valid: false,
+              error: [],
+            }
           },
         },
       });
@@ -133,20 +133,20 @@ export function quizFormHandler(successAction) {
               valid: false,
               error: [],
             },
-            // email: {
-            //   inputWrapper: new SexyInput({
-            //     animation: 'none',
-            //     $field: $form.querySelector('[data-field-name="data-field-email"]'),
-            //     typeInput: 'email',
-            //   }),
-            //   rule: yup
-            //     .string()
-            //     .required(i18next.t('required'))
-            //     .matches(/^[A-Z0-9._%+-]+@[A-Z0-9-]+\.[A-Z]{2,3}$/i, i18next.t('invalid_email')),
-            //   defaultMessage: i18next.t('email'),
-            //   valid: false,
-            //   error: [],
-            // }
+            email: {
+              inputWrapper: new SexyInput({
+                animation: 'none',
+                $field: $form.querySelector('[data-field-name="data-field-email"]'),
+                typeInput: 'email',
+              }),
+              rule: yup
+                .string()
+                .required(i18next.t('required'))
+                .matches(/^[A-Z0-9._%+-]+@[A-Z0-9-]+\.[A-Z]{2,3}$/i, i18next.t('invalid_email')),
+              defaultMessage: i18next.t('email'),
+              valid: false,
+              error: [],
+            }
           },
         },
       });

@@ -105,6 +105,7 @@ const lang = langDetect();
           invalid_upload_file: 'Помилка завантаження файлу. Код: [invalid_upload_file]',
           invalid_recaptcha: 'Заповніть капчу і спробуйте ще раз знову. Код: [invalid_recaptcha]',
           connectionFailed: 'Помилка з\'єднання с CRM',
+          invalid_email: 'Невірний формат email',
         },
       },
       en: {
@@ -138,6 +139,7 @@ const lang = langDetect();
           invalid_upload_file: 'Error uploading file. Code: [invalid_upload_file] ',
           invalid_recaptcha: 'Please fill in the captcha and try again. Code: [invalid_recaptcha] ',
           connectionFailed: 'Server connection error',
+          invalid_email: 'Invalid email format',
         },
       },
     },
@@ -245,7 +247,7 @@ export default class FormMonster {
           }
           if (error === 0) {
             this.watchedState.status = 'successSand';
-            window.dispatchEvent(new CustomEvent('successFormSend'));
+            window.dispatchEvent(new CustomEvent('pform'));
             return true;
           }
           /* eslint-disable-next-line */

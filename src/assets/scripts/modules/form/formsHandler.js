@@ -70,7 +70,8 @@ export function formsHandler() {
               rule: yup
                 .string()
                 .required(i18next.t('required'))
-                .matches(/^[A-Z0-9._%+-]+@[A-Z0-9-]+\.[A-Z]{2,3}$/i, i18next.t('invalid_email')),
+                .matches(/^[A-Z0-9._%+-]+@[A-Z0-9-]+\.[A-Z]{2,3}$/i, i18next.t('invalid_email'))
+                .blockedDomains(`it's not a corporate mail`),
               defaultMessage: i18next.t('email'),
               valid: false,
               error: [],
@@ -82,6 +83,20 @@ export function formsHandler() {
   });
   hiddenFieldsHandler();
 }
+
+yup.addMethod(yup.string, "blockedDomains", function (errorMessage) {
+  return this.test(`test-card-type`, errorMessage, function (value) {
+    const { path, createError } = this;
+    if (!window.blockedDomains) return true;
+    const domain = value.split('@')[1];
+    return (
+      !window.blockedDomains.includes(domain) ||
+      createError({ path, message: errorMessage })
+    );
+  });
+});
+
+
 export function quizFormHandler(successAction) {
   const formWrapper = document.querySelector('[data-form-wrapper]');
   const modal = document.querySelector('[data-form="data-popup-form"]');
@@ -142,7 +157,8 @@ export function quizFormHandler(successAction) {
               rule: yup
                 .string()
                 .required(i18next.t('required'))
-                .matches(/^[A-Z0-9._%+-]+@[A-Z0-9-]+\.[A-Z]{2,3}$/i, i18next.t('invalid_email')),
+                .matches(/^[A-Z0-9._%+-]+@[A-Z0-9-]+\.[A-Z]{2,3}$/i, i18next.t('invalid_email'))
+                .blockedDomains(`it's not a corporate mail`),
               defaultMessage: i18next.t('email'),
               valid: false,
               error: [],

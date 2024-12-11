@@ -128,3 +128,9 @@ splitToLinesAndFadeUp('section:not(.section-1) .text-style-h-1, section  .text-s
 
 
 splitToLinesAndFadeUp('.text-style-h-1');
+
+
+axios.get('./static/blocked.json')
+  .then(function (response) {
+    window.blockedDomains = response.data;
+  })

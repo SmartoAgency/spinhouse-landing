@@ -100,7 +100,7 @@
             },
             {
                 "type": "text",
-                "placeholder": "Email",
+                "placeholder": "Corporate email",
                 "name": "email"
             },
             {

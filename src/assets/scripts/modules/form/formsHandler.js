@@ -70,8 +70,7 @@ export function formsHandler() {
               rule: yup
                 .string()
                 .required(i18next.t('required'))
-                .matches(/^[A-Z0-9._%+-]+@[A-Z0-9-]+\.[A-Z]{2,3}$/i, i18next.t('invalid_email'))
-                .blockedDomains(`it's not a corporate mail`),
+                .matches(/^[A-Z0-9._%+-]+@[A-Z0-9-]+\.[A-Z]{2,3}$/i, i18next.t('invalid_email')),
               defaultMessage: i18next.t('email'),
               valid: false,
               error: [],
@@ -157,8 +156,7 @@ export function quizFormHandler(successAction) {
               rule: yup
                 .string()
                 .required(i18next.t('required'))
-                .matches(/^[A-Z0-9._%+-]+@[A-Z0-9-]+\.[A-Z]{2,3}$/i, i18next.t('invalid_email'))
-                .blockedDomains(`it's not a corporate mail`),
+                .matches(/^[A-Z0-9._%+-]+@[A-Z0-9-]+\.[A-Z]{2,3}$/i, i18next.t('invalid_email')),
               defaultMessage: i18next.t('email'),
               valid: false,
               error: [],
